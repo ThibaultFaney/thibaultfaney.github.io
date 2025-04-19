@@ -1,13 +1,10 @@
 ---
 # Display name
-title: 吳健雄
-
-# Name pronunciation (optional)
-name_pronunciation: Chien Shiung Wu
+title: Thibault Faney
 
 # Full name (for SEO)
-first_name: Shiung Wu
-last_name: Chien
+first_name: Thibault
+last_name: Faney
 
 # Status emoji
 status:
@@ -20,42 +17,34 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: Chief Scientist
+role: Research Scientist
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
-  - name: OpenAI
-    url: https://openai.com/
+  - name: IFP Energies Nouvelles
+    url: https://www.ifpenergiesnouvelles.fr/
 
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
 profiles:
   - icon: at-symbol
-    url: 'mailto:your-email@example.com'
+    url: 'mailto:thibault.faney@ifpen.fr'
     label: E-mail Me
-  - icon: brands/x
-    url: https://twitter.com/GetResearchDev
-  - icon: brands/instagram
-    url: https://www.instagram.com/
-  - icon: brands/github
-    url: https://github.com/gcushen
   - icon: brands/linkedin
-    url: https://www.linkedin.com/
-  - icon: academicons/google-scholar
-    url: https://scholar.google.com/
-  - icon: academicons/orcid
-    url: https://orcid.org/
+    url: https://www.linkedin.com/in/thibaultfaney/
+  - icon: brands/google-scholar
+    url: https://scholar.google.fr/citations?user=6mNJCMUAAAAJ&hl=fr
 
 interests:
-  - Artificial Intelligence
-  - Computational Linguistics
-  - Information Retrieval
+  - Scientific Machine Learning
+  - Numerical Simulations
+  - Mathematical Modeling
 
 education:
-  - area: PhD Artificial Intelligence
-    institution: Stanford University
-    date_start: 2016-01-01
-    date_end: 2020-12-31
+  - area: PhD Nuclear Engineering
+    institution: UC Berkeley
+    date_start: 2008
+    date_end: 2013
     summary: |
       Thesis on _Why LLMs are awesome_. Supervised by [Prof Joe Smith](https://example.com). Presented papers at 5 IEEE conferences with the contributions being published in 2 Springer journals.
     button:
@@ -183,4 +172,4 @@ awards:
 
 ## About Me
 
-Chien Shiung Wu is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+I am research scientist in the applied mathematics department at IFP Energies Nouvelles. My reseach interests include scientific machine learning, numerical simulations and mathematical modeling. I currently lead the AÇAI (Acceleration of Computations through Artificial Intelligence) project which aims at developing hybrid AI and numerical methods for computational chemistry, molecular dynamics and computational fluid dynamics.
