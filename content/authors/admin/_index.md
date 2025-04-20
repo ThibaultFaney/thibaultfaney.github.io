@@ -41,15 +41,15 @@ interests:
   - Mathematical Modeling
 
 education:
-  - area: PhD Nuclear Engineering
+  - area: PhD in Nuclear Engineering
     institution: University of California, Berkeley
     date_start: 2010
     date_end: 2013
-  - area: MSc Nuclear Engineering
+  - area: MSc in Nuclear Engineering
     institution: University of California, Berkeley
     date_start: 2008
     date_end: 2010
-  - area: MSc Engineering
+  - area: BSc and MSc in Engineering
     institution: Ecole des Mines de Paris
     date_start: 2005
     date_end: 2008
