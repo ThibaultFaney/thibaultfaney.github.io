@@ -6,9 +6,9 @@ title: Thibault Faney
 first_name: Thibault
 last_name: Faney
 
-# Status emoji
+# Status emoji (https://emojifinder.com/)
 status:
-  icon: 🎭
+  icon:
 
 # Is this the primary user of the site?
 superuser: true
