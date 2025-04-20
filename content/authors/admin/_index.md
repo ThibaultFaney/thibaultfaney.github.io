@@ -58,6 +58,6 @@ education:
 
 ---
 
-## About Me
+## Hey, I'm Thibault !
 
-I am a research scientist in the Applied Mathematics Department at IFP Energies Nouvelles. My research interests include scientific machine learning, numerical simulations, and mathematical modeling. I currently lead the AÇAI (Acceleration of Computations through Artificial Intelligence) project, which aims to develop hybrid AI and numerical methods for computational chemistry, molecular dynamics, computational fluid dynamics and flow in porous media.
+I am a research scientist in the Applied Mathematics Department at IFP Energies Nouvelles. My research interests include scientific machine learning, numerical simulations, and mathematical modeling.
