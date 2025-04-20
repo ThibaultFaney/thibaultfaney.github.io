@@ -43,16 +43,16 @@ interests:
 education:
   - area: PhD in Nuclear Engineering
     institution: University of California, Berkeley
-    date_start: 2010
-    date_end: 2013
+    date_start: 2010-01
+    date_end: 2013-12
   - area: MSc in Nuclear Engineering
     institution: University of California, Berkeley
-    date_start: 2008
-    date_end: 2010
+    date_start: 2008-08
+    date_end: 2010-01
   - area: BSc and MSc in Engineering
     institution: Ecole des Mines de Paris
-    date_start: 2005
-    date_end: 2008
+    date_start: 2005-09
+    date_end: 2008-06
 
 ---
 
