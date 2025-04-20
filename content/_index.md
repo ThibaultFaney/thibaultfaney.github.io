@@ -1,7 +1,7 @@
 ---
 # Leave the homepage title empty to use the site title
 title: "Thibault Faney, IFPEN"
-date: 2022-10-24
+date: 2025-04-01
 type: landing
 
 design:
