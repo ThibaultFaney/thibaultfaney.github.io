@@ -17,10 +17,8 @@
 {{ $avatar := ($person_page.Resources.ByType "image").GetMatch "*avatar*" }}
 {{ $avatar_shape := site.Params.features.avatar.shape | default "circle" }}
 
+/* Extra rules to handle avatar hogher quality (direct link to avatar image) */
 <style>
-  .portrait-title {
-  margin-top: 10px;
-  }
   .avatar-wrapper {
     display: flex;
     justify-content: center;
@@ -28,14 +26,6 @@
     margin-top: 10px;
     padding-bottom: 10px;
   }
-  
-  .avatar {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-  }
-
 </style>
 
 <div class="resume-biography px-3 flex flex-col md:flex-row justify-center gap-12">
