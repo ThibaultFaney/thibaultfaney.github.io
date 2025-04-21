@@ -17,8 +17,7 @@
 {{ $avatar := ($person_page.Resources.ByType "image").GetMatch "*avatar*" }}
 {{ $avatar_shape := site.Params.features.avatar.shape | default "circle" }}
 
-/* Extra rules to handle avatar hogher quality (direct link to avatar image) */
-<style>
+<style> /* Extra rules to handle avatar higher quality (direct link to avatar image) */
   .avatar-wrapper {
     display: flex;
     justify-content: center;
