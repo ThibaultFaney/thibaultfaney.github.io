@@ -37,25 +37,6 @@ profiles:
   - icon: brands/google-scholar
     url: https://scholar.google.fr/citations?user=6mNJCMUAAAAJ&hl=fr
 
-interests:
-  - Scientific Machine Learning
-  - Numerical Simulations
-  - Mathematical Modeling
-
-education:
-  - area: PhD in Nuclear Engineering
-    institution: University of California, Berkeley
-    date_start: 2010-01-01
-    date_end: 2013-12-01
-  - area: MSc in Nuclear Engineering
-    institution: University of California, Berkeley
-    date_start: 2008-08-01
-    date_end: 2010-01-01
-  - area: BSc and MSc in Engineering
-    institution: Ecole des Mines de Paris
-    date_start: 2005-09-01
-    date_end: 2008-06-01
-
 ---
 
 ## Hey, I'm Thibault !
