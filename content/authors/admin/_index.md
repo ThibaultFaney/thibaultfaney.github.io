@@ -29,9 +29,9 @@ organizations:
 profiles:
   - icon: at-symbol
     url: 'mailto:thibault.faney@ifpen.fr'
+    label: E-mail Me
   - icon: "custom/resume"
     url: uploads/CV_academic.pdf
-    label: E-mail Me
   - icon: brands/linkedin
     url: https://www.linkedin.com/in/thibaultfaney/
   - icon: brands/google-scholar
