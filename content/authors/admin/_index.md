@@ -25,7 +25,7 @@ organizations:
     url: https://www.ifpenergiesnouvelles.fr/
 
 # Social network links
-# Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
+# Need to use another icon? Simply download the SVG icon to your `assets/media/icons/custom` folder.
 profiles:
   - icon: at-symbol
     url: 'mailto:thibault.faney@ifpen.fr'
