@@ -29,7 +29,7 @@ organizations:
 profiles:
   - icon: at-symbol
     url: 'mailto:thibault.faney@ifpen.fr'
-  - icon: "custom/resume"
+  - icon: "custom/resume2"
     url: uploads/resume.pdf
     label: E-mail Me
   - icon: brands/linkedin
