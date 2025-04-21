@@ -17,6 +17,21 @@
 {{ $avatar := ($person_page.Resources.ByType "image").GetMatch "*avatar*" }}
 {{ $avatar_shape := site.Params.features.avatar.shape | default "circle" }}
 
+<style>
+  .avatar-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .avatar {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+</style>
 
 <div class="resume-biography px-3 flex flex-col md:flex-row justify-center gap-12">
   <div class="flex-none m-w-[130px] mx-auto md:mx-0">
