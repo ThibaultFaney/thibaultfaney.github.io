@@ -18,18 +18,8 @@
 {{ $avatar_shape := site.Params.features.avatar.shape | default "circle" }}
 
 <style>
-  .avatar-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-  }
-  
-  .avatar {
-    width: 500px;
-    height: 500px;
-    object-fit: cover;
-    border-radius: 50%;
+  .portrait-title {
+  margin-top: 10px;
   }
 </style>
 
@@ -59,8 +49,7 @@
 
     <div class="avatar-wrapper {{ if $img }}-mt-[105px]{{else}}mt-10{{end}}">
       {{ $avatar_image := $avatar.RelPermalink }}
-      <img class="avatar rounded-full bg-white dark:bg-gray-800 p-1" src="{{ $avatar_image }}" alt="{{$person_page.Title}}"
-           width="150" height="150">
+      <img class="avatar rounded-full bg-white dark:bg-gray-800 p-1" src="{{ $avatar_image }}" alt="{{$person_page.Title}}">
       {{with $person.status.icon}}<span class="avatar-emoji">{{.|emojify}}</span>{{end}}
     </div>
     {{ end }}
