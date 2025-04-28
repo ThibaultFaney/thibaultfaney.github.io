@@ -41,4 +41,4 @@ profiles:
 
 ## Hey, I'm Thibault !
 
-I am a research scientist in the Applied Mathematics Department at IFP Energies Nouvelles. My research interests include scientific machine learning, numerical simulations, and mathematical modeling. TOTOTOTIOT
+I am a research scientist in the Applied Mathematics Department at IFP Energies Nouvelles. My research interests include scientific machine learning, numerical simulations, and mathematical modeling.
