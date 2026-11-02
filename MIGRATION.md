@@ -29,7 +29,7 @@ team page or invented team information has been added.
 - DOI, publisher, Google Scholar, LinkedIn, email, and affiliation links.
 - `/index.xml` and `/publication/index.xml` as publication RSS feeds.
 - `/author/admin/` as a small redirect page to the biography on `/`.
-- `/#papers` still resolves to the publications link on the homepage.
+- `/#papers` still resolves to the Publications link in the homepage navigation.
 
 Publication pages include citation metadata for scholarly indexing and a
 native HTML disclosure for reading or downloading the BibTeX citation.
