@@ -3,7 +3,7 @@
 - The published website is `site/`, containing plain HTML and CSS. Do not add a
   framework, site generator, JavaScript bundle, external font, or build step
   unless the user requests one.
-- Keep the light appearance, green accents, responsive layout, keyboard focus
+- Keep the dark emerald appearance, responsive layout, keyboard focus
   styles, and English content. Use existing verified biographical information;
   do not invent research achievements, affiliations, or team members.
 - Categories are separate pages: About, Research, Publications, Contact.
