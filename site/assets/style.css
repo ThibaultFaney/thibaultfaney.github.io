@@ -75,7 +75,8 @@ body.home {
 }
 .home-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 6rem; align-items: center; }
 .home-intro h1 { margin-bottom: 1.8rem; font-size: clamp(4rem, 7vw, 6rem); line-height: 1.05; }
-.home-intro p { max-width: 32rem; font-size: 1.15rem; line-height: 1.75; color: var(--muted); }
+.home-intro p, .research-copy { font-size: 1.15rem; line-height: 1.75; color: var(--muted); }
+.home-intro p { max-width: 32rem; }
 .home-intro p:last-child { margin-bottom: 0; }
 .portrait { margin: 0 0 0 auto; width: 100%; max-width: 355px; }
 .portrait img { width: 100%; aspect-ratio: 765 / 805; object-fit: cover; border-radius: 150px 150px 4px 4px; }
