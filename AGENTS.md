@@ -13,6 +13,9 @@
   except on `404.html`, whose assets and navigation must use root-relative URLs.
 - When adding a publication, follow the complete checklist in README.md,
   including citation metadata, bibliography, publication list, sitemap, and RSS.
+- After CSS edits, run `python3 scripts/refresh_stylesheet.py` and commit the
+  updated stylesheet URLs in all HTML pages. The site checker rejects stale
+  content versions to prevent browsers from reusing outdated styles.
 - Run `python3 scripts/check_site.py` after changes and review relevant pages at
   desktop and mobile widths when browser tools are available.
 - Prepare changes on a branch and use a pull request. After the relevant checks

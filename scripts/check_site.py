@@ -3,7 +3,8 @@
 
 from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import unquote, urlsplit
+from urllib.parse import parse_qs, unquote, urlsplit
+import hashlib
 import sys
 import xml.etree.ElementTree as ET
 
@@ -26,6 +27,7 @@ class Page(HTMLParser):
         self.nav_links = []
         self.in_nav = False
         self.current = []
+        self.stylesheets = []
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
@@ -48,6 +50,8 @@ class Page(HTMLParser):
             self.meta.setdefault(attrs["name"], []).append(attrs.get("content", ""))
         if tag == "link" and attrs.get("rel") == "canonical":
             self.canonical = attrs.get("href")
+        if tag == "link" and attrs.get("rel") == "stylesheet":
+            self.stylesheets.append(attrs.get("href", ""))
         if tag == "nav" and attrs.get("aria-label") == "Main navigation":
             self.in_nav = True
         if tag == "a" and self.in_nav:
@@ -89,6 +93,8 @@ def main():
     errors = []
     pages = {}
     refs_checked = 0
+    stylesheet = SITE / "assets/style.css"
+    stylesheet_version = hashlib.sha256(stylesheet.read_bytes()).hexdigest()[:12]
     for path in sorted(SITE.rglob("*.html")):
         page = Page(path)
         page.feed(path.read_text(encoding="utf-8"))
@@ -105,6 +111,13 @@ def main():
                 page.errors.append(f"Missing {name} metadata")
         if not page.canonical or not page.canonical.startswith(ORIGIN + "/"):
             page.errors.append("Missing canonical site URL")
+        if len(page.stylesheets) != 1:
+            page.errors.append("Expected one shared stylesheet")
+        else:
+            href = page.stylesheets[0]
+            target = local_target(path, href)
+            if not target or target[0] != stylesheet or parse_qs(urlsplit(href).query).get("v") != [stylesheet_version]:
+                page.errors.append("Stale stylesheet URL; run python3 scripts/refresh_stylesheet.py")
         expected_nav = [SITE / "index.html", SITE / "research/index.html", SITE / "publication/index.html", SITE / "contact/index.html"]
         actual_nav = [local_target(path, ref)[0] for ref in page.nav_links]
         if actual_nav != expected_nav:
