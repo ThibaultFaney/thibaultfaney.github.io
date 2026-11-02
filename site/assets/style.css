@@ -82,9 +82,6 @@ body.home {
 .page-heading { max-width: 880px; margin-bottom: 4rem; }
 .page-heading h1 { margin-bottom: 1.5rem; }
 .page-heading .lead { margin-bottom: 0; }
-.research-project { display: grid; grid-template-columns: 1fr 1.8fr; gap: 3rem; padding: 2.5rem; border: 1px solid var(--line); background: var(--tint); border-radius: 4px; }
-.research-project h2 { font-size: 3rem; margin-bottom: .7rem; }
-.project-name { font-size: .9rem; line-height: 1.65; color: var(--muted); margin: 0; }
 .prose { max-width: 75ch; }
 .research-areas { margin-top: 3.5rem; }
 .area-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0 3rem; list-style: none; margin: 1.5rem 0 0; padding: 0; }
@@ -147,7 +144,6 @@ code { font-family: "SFMono-Regular", Consolas, monospace; }
   .portrait { max-width: 290px; margin: 0 auto; }
   .page-heading { margin-bottom: 2.5rem; }
   .lead { font-size: 1.1rem; }
-  .research-project { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.5rem; }
   .area-list { grid-template-columns: 1fr; }
   .publication-year { grid-template-columns: 1fr; gap: 1.5rem; }
   .publication-list h3 { font-size: 1.2rem; }
