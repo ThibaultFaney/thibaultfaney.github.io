@@ -46,6 +46,10 @@ are best reviewed with the local server.
 
 - Edit the relevant HTML file for text changes. There are no generated HTML files.
 - Edit `site/assets/style.css` for the shared appearance.
+- After editing CSS, run `python3 scripts/refresh_stylesheet.py` and commit the
+  updated HTML links. Each page uses `style.css?v=<content-hash>` so browsers
+  request a fresh stylesheet when its contents change. The site checker rejects
+  missing or stale versions. The site is still published directly as static files.
 - Replace `site/uploads/resume.pdf` to update the CV without changing its URL.
 - Navigation and footer markup are repeated in each HTML file. Keep them
   consistent when adding or renaming a section; `scripts/check_site.py` checks
