@@ -72,10 +72,6 @@ free of a framework or build system; update the HTML and bibliography together.
 
 ## Publish
 
-**Draft prerequisite:** the deployment workflow still needs to be activated.
-Follow [migration/README.md](migration/README.md) before merging this branch.
-The workflow below describes the target configuration.
-
 1. Work on a branch and open a pull request against `main`.
 2. The workflow checks HTML structure, internal links and anchors, navigation,
    publication metadata, bibliography resources, sitemap, RSS feeds, and CV.

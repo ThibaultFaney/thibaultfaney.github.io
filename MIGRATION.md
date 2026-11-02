@@ -76,15 +76,8 @@ without visible horizontal clipping in these views.
 
 ## Review and launch
 
-**Draft status:** the Git credential lacks workflow modification permission.
-The complete target workflow is prepared in `migration/publish.yaml`; the old
-active workflows remain unchanged on this review branch. Follow
-[migration/README.md](migration/README.md) before merging.
-
-- The complete local migration is on `migration/plain-html`. The publishable
-  draft review branch is `migration/html-review`, with workflow activation pending.
-- After workflow activation, the pull request runs the `check` job and skips
-  deployment. The draft currently has local verification only.
+- Work is prepared on `migration/html-review` and submitted as pull request #2.
+- The pull request runs the `check` job. Its deployment job is skipped.
 - Review the four categories and a publication at desktop and mobile widths.
 - Confirm the nine publication URLs, citation downloads, and CV in preview.
 - Check that Settings → Pages → Source remains **GitHub Actions**.
