@@ -35,7 +35,7 @@ a:focus-visible, summary:focus-visible {
 img { display: block; max-width: 100%; height: auto; }
 p { margin: 0 0 1.2rem; }
 h1, h2, h3 { margin: 0; font-weight: 500; line-height: 1.15; }
-h1, h2, .home-link-title { font-family: Georgia, "Times New Roman", serif; }
+h1, h2 { font-family: Georgia, "Times New Roman", serif; }
 h1 { font-size: clamp(2.5rem, 5.5vw, 4.5rem); letter-spacing: -.045em; text-wrap: balance; }
 h2 { font-size: 2rem; letter-spacing: -.03em; }
 h3 { font-size: 1.3rem; line-height: 1.4; }
@@ -72,13 +72,6 @@ main:focus { outline: none; }
 .portrait::before { content: ""; position: absolute; inset: 1rem -1rem 2.6rem 1rem; background: var(--tint); border: 1px solid var(--line); border-radius: 150px 150px 4px 4px; z-index: -1; }
 .portrait img { width: 100%; aspect-ratio: 765 / 805; object-fit: cover; border-radius: 150px 150px 4px 4px; }
 .portrait figcaption { display: flex; justify-content: space-between; gap: 1rem; margin-top: 1rem; font-size: .72rem; color: var(--muted); }
-.home-links { margin-top: 4.5rem; display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); }
-.home-links > a { display: block; padding: 1.8rem 2rem 0 0; text-decoration: none; }
-.home-links > a + a { padding-left: 2rem; border-left: 1px solid var(--line); }
-.home-links .eyebrow { display: block; margin-bottom: .5rem; }
-.home-link-title { display: flex; justify-content: space-between; gap: 1rem; color: var(--ink); font-size: 1.65rem; }
-.home-link-title > span { color: var(--green); }
-.home-links a:hover .home-link-title { color: var(--green); }
 .page-heading { max-width: 880px; margin-bottom: 4rem; }
 .page-heading h1 { margin-bottom: 1.5rem; }
 .page-heading .lead { margin-bottom: 0; }
@@ -148,10 +141,6 @@ code { font-family: "SFMono-Regular", Consolas, monospace; }
   .home-intro h1 { font-size: 4.5rem; }
   .portrait { max-width: 290px; margin: 0 auto; }
   .portrait figcaption { flex-direction: row; font-size: .65rem; }
-  .home-links { margin-top: 3rem; grid-template-columns: 1fr; }
-  .home-links > a { padding-block: 1.5rem; padding-right: 0; }
-  .home-links > a + a { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); }
-  .home-link-title { font-size: 1.5rem; }
   .page-heading { margin-bottom: 2.5rem; }
   .lead { font-size: 1.1rem; }
   .research-project { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.5rem; }
@@ -163,7 +152,7 @@ code { font-family: "SFMono-Regular", Consolas, monospace; }
   .footer-inner { align-items: flex-start; flex-direction: column; }
 }
 @media print {
-  .site-header, .site-footer, .actions, .skip-link, .back-link, .home-links { display: none; }
+  .site-header, .site-footer, .actions, .skip-link, .back-link { display: none; }
   body { background: white; color: black; }
   .container { width: 100%; padding: 0; }
   a { color: black; }

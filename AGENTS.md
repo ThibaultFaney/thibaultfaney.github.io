@@ -15,5 +15,7 @@
   including citation metadata, bibliography, publication list, sitemap, and RSS.
 - Run `python3 scripts/check_site.py` after changes and review relevant pages at
   desktop and mobile widths when browser tools are available.
-- Prepare changes on a branch and use a pull request. Deployment happens when
-  changes reach `main`; do not merge or publish without the user's instruction.
+- Prepare changes on a branch and use a pull request. After the relevant checks
+  pass, merge the PR and verify the GitHub Pages deployment. The user has
+  authorized this workflow for future site changes so edits appear online
+  without a separate merge confirmation.
