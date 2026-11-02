@@ -4,7 +4,8 @@
 
 The website is now a set of static HTML documents with one shared CSS file.
 The English biography, research description, photograph, CV, and all nine
-publications have been retained. The appearance is light with green accents.
+publications have been retained. The site uses a dark emerald palette and the
+original Hugo Blox geometric background on the homepage.
 
 The main categories are separate pages:
 
@@ -48,7 +49,7 @@ have been removed. The old source remains in Git history.
 Publication lists, article pages, bibliographies, sitemap, and RSS are now
 edited together as documented in README.md. There is no generation step.
 The former search and theme switcher have been replaced by direct navigation
-and a light appearance.
+and a dark emerald appearance.
 
 ## Validation
 

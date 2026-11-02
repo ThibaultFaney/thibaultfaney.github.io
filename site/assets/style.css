@@ -1,13 +1,14 @@
 /* Plain CSS shared by every page. No framework, web fonts, or build step. */
 :root {
-  color-scheme: light;
-  --paper: #fbfcf9;
-  --ink: #202b27;
-  --muted: #54635b;
-  --green: #22634b;
-  --green-dark: #174733;
-  --tint: #eef3e9;
-  --line: #d9e1d6;
+  color-scheme: dark;
+  --paper: #003223;
+  --ink: #f0f8f4;
+  --muted: #c4dacf;
+  --green: #6ee7b7;
+  --green-hover: #a7f3d0;
+  --tint: #014537;
+  --line: #296251;
+  --chrome: #00271c;
   --width: 1120px;
 }
 
@@ -26,7 +27,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 a { color: var(--green); text-underline-offset: .2em; }
-a:hover { color: var(--green-dark); }
+a:hover { color: var(--green-hover); }
 a:focus-visible, summary:focus-visible {
   outline: 3px solid var(--green);
   outline-offset: 5px;
@@ -46,9 +47,9 @@ main:focus { outline: none; }
   margin-inline: auto;
 }
 .container { padding-block: 4.8rem 6rem; }
-.skip-link { position: absolute; top: -100px; left: 1rem; z-index: 10; padding: .6rem 1rem; background: white; }
+.skip-link { position: absolute; top: -100px; left: 1rem; z-index: 10; padding: .6rem 1rem; background: var(--chrome); }
 .skip-link:focus { top: 1rem; }
-.site-header { border-bottom: 1px solid var(--line); }
+.site-header { border-bottom: 1px solid var(--line); background: var(--chrome); }
 .header-inner { min-height: 100px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
 .brand { display: inline-flex; align-items: center; gap: .85rem; color: var(--ink); text-decoration: none; font-size: 1rem; font-weight: 600; white-space: nowrap; }
 .monogram { font: 2.1rem/1 Georgia, serif; color: var(--green); letter-spacing: -.12em; padding-right: .15em; }
@@ -60,18 +61,24 @@ main:focus { outline: none; }
 .accent { color: var(--green); }
 .lead { max-width: 46rem; font-size: 1.2rem; line-height: 1.75; color: var(--muted); }
 .actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem 2rem; margin-top: 2rem; }
-.button { display: inline-flex; align-items: center; gap: 1.8rem; padding: .85rem 1.3rem; background: var(--green); color: white; border: 1px solid var(--green); border-radius: 3px; font-size: .9rem; font-weight: 500; text-decoration: none; }
-.button:hover { background: var(--green-dark); color: white; }
+.button { display: inline-flex; align-items: center; gap: 1.8rem; padding: .85rem 1.3rem; background: var(--green); color: var(--paper); border: 1px solid var(--green); border-radius: 3px; font-size: .9rem; font-weight: 500; text-decoration: none; }
+.button:hover { background: var(--green-hover); color: var(--paper); }
 .text-link { display: inline-flex; align-items: center; gap: .65rem; font-size: .9rem; font-weight: 500; }
 .file-type { font-size: .65rem; font-weight: 600; letter-spacing: .04em; }
+/* Reuse the original Hugo Blox background, with a darker overlay for reading. */
+body.home {
+  background-image: linear-gradient(90deg, rgb(0 25 18 / 55%), rgb(0 25 18 / 25%)), url("images/stacked-peaks.svg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
 .home-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 6rem; align-items: center; }
 .home-intro h1 { margin-bottom: 1.8rem; font-size: clamp(4rem, 7vw, 6rem); line-height: 1.05; }
-.home-intro .lead { font-size: 1.15rem; }
-.intro-detail { max-width: 32rem; color: var(--muted); }
+.home-intro p { max-width: 32rem; font-size: 1.15rem; line-height: 1.75; color: var(--muted); }
+.home-intro p:last-child { margin-bottom: 0; }
 .portrait { margin: 0 0 0 auto; width: 100%; max-width: 355px; position: relative; }
-.portrait::before { content: ""; position: absolute; inset: 1rem -1rem 2.6rem 1rem; background: var(--tint); border: 1px solid var(--line); border-radius: 150px 150px 4px 4px; z-index: -1; }
+.portrait::before { content: ""; position: absolute; inset: 1rem -1rem -1rem 1rem; background: var(--tint); border: 1px solid var(--line); border-radius: 150px 150px 4px 4px; z-index: -1; }
 .portrait img { width: 100%; aspect-ratio: 765 / 805; object-fit: cover; border-radius: 150px 150px 4px 4px; }
-.portrait figcaption { display: flex; justify-content: space-between; gap: 1rem; margin-top: 1rem; font-size: .72rem; color: var(--muted); }
 .page-heading { max-width: 880px; margin-bottom: 4rem; }
 .page-heading h1 { margin-bottom: 1.5rem; }
 .page-heading .lead { margin-bottom: 0; }
@@ -119,7 +126,7 @@ code { font-family: "SFMono-Regular", Consolas, monospace; }
 .profile-links li { border-bottom: 1px solid var(--line); }
 .profile-links a { display: flex; align-items: center; gap: .5rem; padding-block: .9rem; text-decoration: none; }
 .profile-links a > span:last-child { margin-left: auto; }
-.site-footer { border-top: 1px solid var(--line); }
+.site-footer { border-top: 1px solid var(--line); background: var(--chrome); }
 .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 1rem 2rem; padding-block: 1.8rem; color: var(--muted); font-size: .75rem; }
 .footer-inner p { margin: 0; }
 .footer-inner p > span { padding-inline: .5rem; }
@@ -128,7 +135,6 @@ code { font-family: "SFMono-Regular", Consolas, monospace; }
 
 @media (max-width: 950px) {
   .home-grid { gap: 3rem; }
-  .portrait figcaption { flex-direction: column; gap: 0; }
   .header-inner { gap: 1rem; }
 }
 @media (max-width: 700px) {
@@ -140,7 +146,6 @@ code { font-family: "SFMono-Regular", Consolas, monospace; }
   .home-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .home-intro h1 { font-size: 4.5rem; }
   .portrait { max-width: 290px; margin: 0 auto; }
-  .portrait figcaption { flex-direction: row; font-size: .65rem; }
   .page-heading { margin-bottom: 2.5rem; }
   .lead { font-size: 1.1rem; }
   .research-project { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.5rem; }
@@ -152,8 +157,9 @@ code { font-family: "SFMono-Regular", Consolas, monospace; }
   .footer-inner { align-items: flex-start; flex-direction: column; }
 }
 @media print {
+  :root { color-scheme: light; --paper: white; --ink: black; --muted: #333; --green: #174733; --green-hover: #174733; --tint: #f0f3f0; --line: #bbb; --chrome: white; }
   .site-header, .site-footer, .actions, .skip-link, .back-link { display: none; }
-  body { background: white; color: black; }
+  body, body.home { background: white; color: black; }
   .container { width: 100%; padding: 0; }
   a { color: black; }
   .home-grid { gap: 2rem; }
