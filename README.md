@@ -1,52 +1,95 @@
-# [Hugo Academic CV Theme](https://github.com/HugoBlox/theme-academic-cv)
+# Thibault Faney — personal website
 
-[![Screenshot](.github/preview.webp)](https://hugoblox.com/templates/)
+A static academic website in plain HTML and CSS, hosted at
+<https://thibaultfaney.github.io/>. No framework, JavaScript, package installation,
+or site generation is required.
 
-The Hugo **Academic CV Template** empowers you to easily create your job-winning online resumé, showcase your academic publications, and create online courses or knowledge bases to grow your audience.
+## Files
 
-[![Get Started](https://img.shields.io/badge/-Get%20started-ff4655?style=for-the-badge)](https://hugoblox.com/templates/)
-[![Discord](https://img.shields.io/discord/722225264733716590?style=for-the-badge)](https://discord.com/channels/722225264733716590/742892432458252370/742895548159492138)  
-[![Twitter Follow](https://img.shields.io/twitter/follow/GetResearchDev?label=Follow%20on%20Twitter)](https://twitter.com/GetResearchDev)
+All published files live in `site/`. GitHub Pages publishes that directory as-is.
 
-️**Trusted by 250,000+ researchers, educators, and students.** Highly customizable via the integrated **no-code, Hugo Blox Builder**, making every site truly personalized ⭐⭐⭐⭐⭐
+```text
+site/
+  index.html                    About / homepage
+  research/index.html           Research and the AÇAI project
+  publication/index.html        Publication list, grouped by year
+  publication/<slug>/index.html Individual article and abstract
+  publication/<slug>/cite.bib   Individual BibTeX citation
+  contact/index.html            Email, profiles, and CV
+  uploads/resume.pdf            Curriculum vitae (original public URL)
+  assets/images/portrait.jpg    Profile photograph
+  assets/style.css              Shared responsive styles
+  publications.bib              Complete bibliography
+  sitemap.xml                   Public page URLs
+  index.xml                     Publications RSS (legacy URL)
+  publication/index.xml         Publications RSS
+  404.html                      Custom not-found page
+scripts/check_site.py           Dependency-free site checks
+.github/workflows/publish.yaml  Check pull requests; publish main
+```
 
-Easily write technical content with plain text Markdown, LaTeX math, diagrams, RMarkdown, or Jupyter, and import publications from BibTeX.
+## Preview locally
 
-[Check out the latest demo](https://academic-demo.netlify.app/) of what you'll get in less than 10 minutes, or [get inspired by our academics and research groups](https://hugoblox.com/creators/).
+From the repository root, with Python 3.10 or newer:
 
-The integrated [**Hugo Blox Builder**](https://hugoblox.com) and CMS makes it easy to create a beautiful website for free. Edit your site in the CMS (or your favorite editor), generate it with [Hugo](https://github.com/gohugoio/hugo), and deploy with GitHub or Netlify. Customize anything on your site with widgets, light/dark themes, and language packs.
+```bash
+python3 scripts/check_site.py
+python3 -m http.server 8000 --directory site
+```
 
-- 👉 [**Get Started**](https://hugoblox.com/templates/)
-- 📚 [View the **documentation**](https://docs.hugoblox.com/)
-- 💬 [Chat with the **Hugo Blox Builder community**](https://discord.gg/z8wNYzb) or [**Hugo community**](https://discourse.gohugo.io)
-- 🐦 Twitter: [@GetResearchDev](https://twitter.com/GetResearchDev) [@GeorgeCushen](https://twitter.com/GeorgeCushen) [#MadeWithHugoBlox](https://twitter.com/search?q=%23MadeWithHugoBlox&src=typed_query)
-- ⬇️ **Automatically import your publications from BibTeX** with the [Hugo Academic CLI](https://github.com/GetRD/academic-file-converter)
-- 💡 [Suggest an improvement](https://github.com/HugoBlox/hugo-blox-builder/issues)
-- ⬆️ **Updating?** View the [Update Guide](https://docs.hugoblox.com/reference/update/) and [Release Notes](https://github.com/HugoBlox/hugo-blox-builder/releases)
+Open <http://localhost:8000/>. Stop the server with `Ctrl+C`.
+The HTTP server is only a preview tool, not a production dependency.
+You can also open `site/index.html` directly in a browser, but directory links
+are best reviewed with the local server.
 
-## We ask you, humbly, to support this open source movement
+## Make changes
 
-Today we ask you to defend the open source independence of the Hugo Blox Builder and themes 🐧
+- Edit the relevant HTML file for text changes. There are no generated HTML files.
+- Edit `site/assets/style.css` for the shared appearance.
+- Replace `site/uploads/resume.pdf` to update the CV without changing its URL.
+- Navigation and footer markup are repeated in each HTML file. Keep them
+  consistent when adding or renaming a section; `scripts/check_site.py` checks
+  the navigation destinations and active page.
+- Keep the site in English unless a translation is explicitly requested.
 
-We're an open source movement that depends on your support to stay online and thriving, but 99.9% of our creators don't give; they simply look the other way.
+### Add a publication
 
-### [❤️ Click here to become a Sponsor, unlocking awesome perks such as _exclusive academic templates and blocks_](https://hugoblox.com/sponsor/)
+1. Copy a directory under `site/publication/` to a new, stable slug.
+2. Update its title, authors, journal, date, abstract, keywords, DOI, publisher
+   link, and BibTeX citation. Update the page title, description, canonical URL,
+   Open Graph metadata, and `citation_*` metadata too.
+3. Replace its `cite.bib` and the citation displayed in the expandable
+   “BibTeX citation” section. Add the entry to `site/publications.bib`.
+4. Add the publication to `site/publication/index.html` in reverse chronological
+   order, under its year. Keep all authors and highlight Thibault Faney.
+5. Add the page URL to `site/sitemap.xml` and the RSS item to both
+   `site/index.xml` and `site/publication/index.xml`.
+6. Run the checks and preview the article and publication list.
 
-<!--
-<p align="center"><a href="https://hugoblox.com/templates/" target="_blank" rel="noopener"><img src="https://hugoblox.com/uploads/readmes/academic_logo_200px.png" alt="Hugo Academic Theme for Hugo Blox Builder"></a></p>
--->
+The bibliography is a downloadable resource, not a generator input. Editing a
+`.bib` file does not rebuild pages. This deliberate duplication keeps publishing
+free of a framework or build system; update the HTML and bibliography together.
 
-## Demo image credits
+## Publish
 
-- [Unsplash](https://unsplash.com)
+**Draft prerequisite:** the deployment workflow still needs to be activated.
+Follow [migration/README.md](migration/README.md) before merging this branch.
+The workflow below describes the target configuration.
 
-## Latest news
+1. Work on a branch and open a pull request against `main`.
+2. The workflow checks HTML structure, internal links and anchors, navigation,
+   publication metadata, bibliography resources, sitemap, RSS feeds, and CV.
+   External websites are not contacted by these checks.
+3. Review the desktop and mobile rendering locally. Pull requests do not deploy.
+4. Merge the reviewed changes into `main`. After checks pass, GitHub Actions
+   uploads only `site/` and deploys it to the existing GitHub Pages environment.
 
-<!--START_SECTION:news-->
+The repository's **Settings → Pages → Source** should be **GitHub Actions**, as
+for the previous Hugo deployment. No separate hosting service is required.
+See [MIGRATION.md](MIGRATION.md) for preserved URLs and the migration checklist.
 
-- [Easily make an academic CV website to get more cites and grow your audience 🚀](https://hugoblox.com/blog/easily-make-academic-website/)
-- [What&#39;s new in v5.2?](https://hugoblox.com/blog/whats-new-in-v5.2/)
-- [What&#39;s new in v5.1?](https://hugoblox.com/blog/whats-new-in-v5.1/)
-- [Version 5.0 (February 2021)](https://hugoblox.com/blog/version-5.0-february-2021/)
-- [Version 5.0 Beta 3 (February 2021)](https://hugoblox.com/blog/version-5.0-beta-3-february-2021/)
-<!--END_SECTION:news-->
+## Licenses
+
+The website retains the existing CC BY-NC-ND 4.0 content notice. The original
+template's MIT license is preserved in [LICENSE.md](LICENSE.md). Publications
+remain subject to their respective publishers' terms.
